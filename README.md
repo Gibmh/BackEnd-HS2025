@@ -27,7 +27,7 @@ Make sure you have the following software installed on your machine:
 2. **Navigate to the project directory:**
 
    ```sh
-   cd backend
+   cd BackEnd-HS2025-main
    ```
 
 3. **Install the dependencies:**
