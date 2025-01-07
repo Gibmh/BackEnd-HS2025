@@ -21,7 +21,7 @@ Make sure you have the following software installed on your machine:
 1. **Clone the repository:**
 
    ```sh
-   git clone https://github.com/Gibmh/demo-BE-FE.git
+   git clone https://github.com/Gibmh/BackEnd-HS2025.git
    ```
 
 2. **Navigate to the project directory:**
