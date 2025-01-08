@@ -89,6 +89,8 @@ const createob = async () => {
 ** Lưu ý: khi sử dụng method post thì trong các object khi gửi kèm theo giúp em 1 biến là typeob vì các thông tin đều dùng cùng 1 api để post nên em sử dụng thêm biến đó để nó phân biệt là post vô table nào **
 ![Screenshot 2025-01-08 001612](https://github.com/user-attachments/assets/25ffc068-878b-43b0-b5e5-8eaf1f766b1f)
 ![Screenshot 2025-01-08 001815](https://github.com/user-attachments/assets/0c3dd87f-7627-48ac-b42c-1ce9ece90b47)
+![image](https://github.com/user-attachments/assets/f5e45c3d-0f0b-453b-9bd4-7efb4c7ee33f)
+
 
 
 
