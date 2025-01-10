@@ -20,11 +20,11 @@ app.use(bodyParser.urlencoded({ extended: true }));
 app.use(cors());
 connectDB();
 
-app.get("/api/get-object-list", ReadData);
-app.post("/api/create-object", CreateData);
-app.get("/api/get-ob-by-id", ReadID);
-app.post("/api/update-object", UpdateData);
-app.post("/api/delete-object", DeleteData);
+app.get(String(process.env.API_GOL), ReadData);
+app.post(String(process.env.API_CO), CreateData);
+app.get(String(process.env.API_GOID), ReadID);
+app.post(String(process.env.API_UO), UpdateData);
+app.delete(String(process.env.API_DO), DeleteData);
 
 let port = process.env.PORT || 3030;
 // port == undifined => port = 3030

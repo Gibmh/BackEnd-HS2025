@@ -1,18 +1,13 @@
 const { Sequelize } = require("sequelize");
-const config = require("./config.json");
-
-const environment = process.env.NODE_ENV || "development";
-const dbConfig = config[environment];
+require("dotenv").config();
 
 const sequelize = new Sequelize(
-  dbConfig.database,
-  dbConfig.username,
-  dbConfig.password,
+  process.env.DB,
+  process.env.USER,
+  process.env.PASS,
   {
-    host: dbConfig.host,
-    dialect: dbConfig.dialect,
-    port: dbConfig.port,
-    logging: false,
+    host: process.env.HOST,
+    dialect: "mysql",
     dialectOptions: {
       connectTimeout: 60000,
     },

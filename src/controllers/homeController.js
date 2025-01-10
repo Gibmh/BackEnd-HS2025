@@ -3,6 +3,7 @@ import CRUDService from "../services/CRUDService";
 
 let ReadData = async (req, res) => {
   let data = await CRUDService.readAllinfo(req.query);
+  console.log(req.query);
   return res.json(data);
 };
 
@@ -24,7 +25,7 @@ let UpdateData = async (req, res) => {
 };
 
 let DeleteData = async (req, res) => {
-  let data = await CRUDService.deleteOb(req.body);
+  let data = await CRUDService.deleteOb(req.query);
   return res.json(data);
 };
 

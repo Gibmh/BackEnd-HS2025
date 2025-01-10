@@ -147,7 +147,7 @@ let updateObject = (data) => {
   return new Promise(async (resolve, reject) => {
     try {
       let data_res = {};
-      console.log("Received data.typeOb:", data);
+      console.log("Received data.typeOb:", data.id);
 
       switch (data.typeOb) {
         case "book": {
@@ -171,6 +171,7 @@ let updateObject = (data) => {
           break;
         }
         case "member": {
+          console.log("Received data.id:", data.id);
           data_res = await db.members.findOne({
             where: { id_member: data.id },
             raw: true,
@@ -214,22 +215,22 @@ let deleteOb = (rq) => {
       switch (rq.typeOb) {
         case "book":
           ob = await db.products.findOne({
-            where: { id_product: rq.ID },
+            where: { id_product: rq.id },
           });
           break;
         case "order":
           ob = await db.orders.findOne({
-            where: { id_bill: rq.ID },
+            where: { id_bill: rq.id },
           });
           break;
         case "member":
           ob = await db.members.findOne({
-            where: { id_member: rq.ID },
+            where: { id_member: rq.id },
           });
           break;
         case "consignor":
           ob = await db.consignors.findOne({
-            where: { id_consignor: rq.ID },
+            where: { id_consignor: rq.id },
           });
           break;
         default:
