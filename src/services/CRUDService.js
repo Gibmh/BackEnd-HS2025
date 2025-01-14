@@ -251,10 +251,38 @@ let deleteOb = (rq) => {
   });
 };
 
+let LoginCheck = (data) => {
+  return new Promise(async (resolve, reject) => {
+    try {
+      console.log("Received data:", data);
+      let user = await db.members.findOne({
+        where: { id_member: data.id_member },
+        raw: true,
+      });
+      if (user) {
+        if (user.password === data.password) {
+          console.log("Login successful");
+          resolve({ success: true, role: user.role });
+        } else {
+          console.log("Incorrect password");
+          resolve({ success: false, message: "Incorrect password" });
+        }
+      } else {
+        console.log("User not found");
+        resolve({ success: false, message: "User not found" });
+      }
+    } catch (error) {
+      console.error("Error logging in:", error);
+      reject({ success: false, message: error.message });
+    }
+  });
+};
+
 module.exports = {
   NewObject: NewObject,
   readAllinfo: readAllinfo,
   getInfobyId: getInfobyId,
   updateObject: updateObject,
   deleteOb: deleteOb,
+  LoginCheck: LoginCheck,
 };

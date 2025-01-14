@@ -29,10 +29,16 @@ let DeleteData = async (req, res) => {
   return res.json(data);
 };
 
+let Login = async (req, res) => {
+  let data = await CRUDService.LoginCheck(req.body);
+  return res.json(data);
+};
+
 module.exports = {
   UpdateData: UpdateData,
   ReadData: ReadData,
   CreateData: CreateData,
   ReadID: ReadID,
   DeleteData: DeleteData,
+  Login: Login,
 };
