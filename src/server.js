@@ -23,7 +23,7 @@ connectDB();
 
 app.get(String(process.env.API_GOL), ReadData);
 app.post(String(process.env.API_CO), CreateData);
-app.get(String(process.env.API_GOID), ReadID);
+app.get(String(process.env.API_GOBID), ReadID);
 app.post(String(process.env.API_UO), UpdateData);
 app.delete(String(process.env.API_DO), DeleteData);
 app.post(String(process.env.API_LC), Login);

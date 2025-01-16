@@ -15,6 +15,7 @@ let CreateData = async (req, res) => {
 };
 
 let ReadID = async (req, res) => {
+  console.log(req.query);
   let data = await CRUDService.getInfobyId(req.query);
   return res.json(data);
 };
