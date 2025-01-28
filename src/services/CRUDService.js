@@ -207,7 +207,7 @@ const LoginCheck = (data) => {
       });
       if (user) {
         if (user.password === data.password) {
-          resolve({ success: true, role: user.role });
+          resolve({ success: true, data: user });
         } else {
           resolve({ success: false, message: "Incorrect password" });
         }
@@ -222,10 +222,10 @@ const LoginCheck = (data) => {
 };
 
 module.exports = {
-  NewObject,
-  readAllinfo,
-  getInfobyId,
-  updateObject,
-  deleteOb,
-  LoginCheck,
+  NewObject: NewObject,
+  readAllinfo: readAllinfo,
+  getInfobyId: getInfobyId,
+  updateObject: updateObject,
+  deleteOb: deleteOb,
+  LoginCheck: LoginCheck,
 };
